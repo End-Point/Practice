@@ -1,0 +1,12 @@
+server:
+  port: 8762
+
+#需要指明spring.application.name,这个很重要，这在以后的服务与服务之间相互调用一般都是根据这个name
+spring:
+  application:
+    name: service-client
+eureka:
+  client:
+    service-url:
+      #这里是服务注册中心的地址，提供者通过这个地址向注册中心发送心跳
+      defaultZone: http://localhost:8761/eureka/
