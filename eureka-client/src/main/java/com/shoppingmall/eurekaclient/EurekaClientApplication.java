@@ -9,11 +9,12 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 /**
+ * 第一章(2)：创建服务提供者
  * 当client向server注册时，它会提供一些元数据，例如主机和端口，URL，主页等。
  * Eureka server 从每个client实例接收心跳消息。 如果心跳超时，则通常将该实例从注册server中删除。
  */
 @SpringBootApplication
-@EnableEurekaClient //表明这是提供者
+@EnableEurekaClient //表明这是提供者,并向服务中心注册
 @RestController //相当于@Controller
 public class EurekaClientApplication {
 

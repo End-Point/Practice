@@ -6,7 +6,10 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="shoppingmall" />
+        <module name="eureka-client" />
+        <module name="eureka-server" />
+        <module name="service-feign" />
+        <module name="service-ribbon" />
       </profile>
     </annotationProcessing>
   </component>
