@@ -1,13 +1,17 @@
+#服务注册中心端口号
 server:
   port:  8761
 eureka:
+  #服务注册中心实例的主机名 可以是其他名字 如localhost2
   instance:
-    hostname: localhost
+    hostname: localhost2
   client:
-    #ͨ��eureka.client.registerWithEureka��false��fetchRegistry��false�������Լ���һ��eureka server.
+    #是否向服务注册中心注册自己
     register-with-eureka: false
+    #是否检索服务
     fetch-registry: false
     service-url:
+      #服务注册中心的配置内容，指定服务注册中心的位置
       defaultZone: http://${eureka.instance.hostname}:${server.port}/eureka/
 
 spring:

@@ -9,8 +9,12 @@
         <module name="eureka-client" />
         <module name="eureka-server" />
         <module name="service-feign" />
+        <module name="service-hystrix" />
         <module name="service-ribbon" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="shoppingmallcommon" target="1.7" />
+    </bytecodeTargetLevel>
   </component>
 </project>

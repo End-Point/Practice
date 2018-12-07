@@ -6,4 +6,5 @@ server:
   port: 8764
 spring:
   application:
+    #服务之间通过这个名字相互调用
     name: service-ribbon
