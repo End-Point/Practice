@@ -14,6 +14,7 @@ public interface Hiremote {
     /**
      * Feign会自动实例化带有@FeignClient注解接口中的方法
      * 此方法的地址和参数需要和远程调用的方法相同
+     * @PostMapping(value = "接口地址") 使用post请求方法调用 还其他请求方法
      * @param name
      * @return
      */

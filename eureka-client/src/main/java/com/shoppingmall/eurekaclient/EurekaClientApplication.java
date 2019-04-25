@@ -1,5 +1,6 @@
 package com.shoppingmall.eurekaclient;
 
+import com.netflix.hystrix.contrib.javanica.annotation.HystrixCommand;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -35,4 +36,5 @@ public class EurekaClientApplication {
     public String home(@RequestParam(value = "name", defaultValue = "forezp") String name) {
         return "hello " + name + " ,i am from port:" + port;
     }
+
 }

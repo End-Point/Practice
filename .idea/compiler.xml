@@ -6,15 +6,19 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
+        <module name="config-server" />
         <module name="eureka-client" />
         <module name="eureka-server" />
         <module name="service-feign" />
         <module name="service-ribbon" />
+        <module name="service-zuul" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="config-server (1)" target="1.8" />
       <module name="service-hystrix" target="1.8" />
       <module name="shoppingmallcommon" target="1.7" />
+      <module name="springCloudConfig" target="1.7" />
     </bytecodeTargetLevel>
   </component>
 </project>

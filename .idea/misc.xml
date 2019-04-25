@@ -12,11 +12,15 @@
         <option value="$PROJECT_DIR$/eureka-client/pom.xml" />
         <option value="$PROJECT_DIR$/service-ribbon/pom.xml" />
         <option value="$PROJECT_DIR$/service-feign/pom.xml" />
+        <option value="$PROJECT_DIR$/service-zuul/pom.xml" />
+        <option value="$PROJECT_DIR$/config-server/pom.xml" />
+        <option value="$PROJECT_DIR$/config/config-server/pom.xml" />
       </list>
     </option>
     <option name="ignoredFiles">
       <set>
         <option value="$PROJECT_DIR$/shoppingmall-common/pom.xml" />
+        <option value="$PROJECT_DIR$/springCloudConfig/pom.xml" />
       </set>
     </option>
   </component>

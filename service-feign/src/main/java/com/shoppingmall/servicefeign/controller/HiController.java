@@ -20,9 +20,4 @@ public class HiController {
     public String hiConsumer(@RequestParam(defaultValue = "helloWorld") String name){
        return  hiremote.hiConsumer(name);
     }
-
-    public static void main(String[] args) {
-        long a = 13060419790407001L;
-        System.out.println();
-    }
 }

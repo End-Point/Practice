@@ -9,13 +9,14 @@
     <packaging>jar</packaging>
 
     <name>eureka-client</name>
-    <description>Demo project for Spring Boot</description>
+    <description>服务提供者</description>
     <parent>
         <groupId>com.shoppingmall</groupId>
         <artifactId>shoppingmall</artifactId>
         <version>1.0-SNAPSHOT</version>
     </parent>
 
+    <!--eureak-client 注册中心的客户端，向服务端进行注册-->
     <dependencies>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
@@ -24,6 +25,13 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>
+        </dependency>
+        <!--springcloud的熔断器-->
+        <dependency>
+            <groupId>com.netflix.hystrix</groupId>
+            <artifactId>hystrix-javanica</artifactId>
+            <version>RELEASE</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 
