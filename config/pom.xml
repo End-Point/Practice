@@ -8,10 +8,10 @@
     <artifactId>config</artifactId>
     <version>0.0.1-SNAPSHOT</version>
     <packaging>pom</packaging>
-   <!-- <modules>
+    <modules>
         <module>config-server</module>
         <module>config-client</module>
-    </modules>-->
+    </modules>
     <name>config</name>
     <description>springcloud config 统一配置</description>
     <parent>

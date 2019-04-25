@@ -1,0 +1,19 @@
+spring:
+  cloud:
+   config:
+     #对应application部分 就是config-dev.properties文件名的config
+     name: config
+     #就是config-dev.properties文件名的dev
+     profile: dev
+     #springcloud 统一配置的 服务端地址 客户端通过该地址获取服务端的配置文件
+     uri: http://localhost:8001/
+     # git的分支，如果配置中心使用的是本地存储，则该参数无用
+     label: master
+     #指定统一配置服务端的服务名，便于扩展为高可用配置集群
+#     discovery:
+#       service-id:
+
+
+
+#  特别注意：上面这些与spring-cloud相关的属性必须配置在bootstrap.yml，config部分内容才能被正确加载。
+  #因为config的相关配置会先于application.properties，而bootstrap.properties的加载也是先于application.properties。
