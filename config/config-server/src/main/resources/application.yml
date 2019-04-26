@@ -1,3 +1,13 @@
+#最初版本是客户端都是直接调用配置中心的server端来获取配置文件信息。这样就存在了一个问题，客户端和服务端的耦合性太高，
+#如果server端要做集群，客户端只能通过原始的方式来路由，server端改变IP地址的时候，客户端也需要修改配置，不符合springcloud服务
+#治理的理念。springcloud提供了这样的解决方案，我们只需要将server端当做一个服务注册到eureka中，client端去eureka中去获取配置
+#中心server端的服务既可。将config-server和config-client当做一个服务注册到eureka中。
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+
+#修改config-server的端口号，启动两个服务端，模拟高可用的集群操作，在一台服务器宕机后，另一台可以继续支撑项目的运行。
 server:
   port: 8001
 

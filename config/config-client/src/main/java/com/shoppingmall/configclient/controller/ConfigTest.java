@@ -6,12 +6,16 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+
+/**
+ *
+ */
 @Controller
-@RefreshScope //动态刷新配置文件
+@RefreshScope //首先在pom文件中加入jar包，然后使用该注解的类，会在接到SpringCloud配置中心配置刷新的时候，自动将新的配置更新到该类对应的字段中。
 @RequestMapping(value = "configTest")
 public class ConfigTest {
 
-    /*读取配置信息的格式为 @Value("${配置文件的key值}")  */
+    /*读取配置信息的格式为 @Value("${远程配置文件的key值}") */
     @Value("${neo.hello}")
     private String hello;
 

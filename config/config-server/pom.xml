@@ -25,6 +25,14 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-config-server</artifactId>
         </dependency>
+
+        <!--如果要向eureka注册，必须引入eureka-client 的jar包，否则在配置文件中无法使用注册功能。
+        配置文件警告信息为：Cannot resolve configuration property 'eureka.client.service-url.defaultZone' 就是无法解析配置属性-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-netflix-eureka-client</artifactId>
+        </dependency>
+
     </dependencies>
     <build>
         <plugins>

@@ -5,8 +5,14 @@ spring:
      name: config
      #就是config-dev.properties文件名的dev
      profile: dev
-     #springcloud 统一配置的 服务端地址 客户端通过该地址获取服务端的配置文件
-     uri: http://localhost:8001/
+     #springcloud 统一配置的 服务端地址 客户端通过该地址获取服务端的配置文件，如果config-server向eureka注册了，需要根据server的服务名
+     #从eureka中获取config-server的配置文件信息。所以注释调，加入discovery.enabled
+#     uri: http://localhost:8001/
+     #开启config的服务发现，表明向config-server端注册
+     discovery:
+       enabled: true
+       #config-server服务端的服务名称
+       service-id: config-server
      # git的分支，如果配置中心使用的是本地存储，则该参数无用
      label: master
      #指定统一配置服务端的服务名，便于扩展为高可用配置集群
