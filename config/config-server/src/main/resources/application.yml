@@ -1,0 +1,22 @@
+server:
+  port: 8001
+
+#springcloud config 统一配置 server端。config组件会将配置文件信息转为接口的方式，如：访问 仓库下的 config-dev.properties文件。
+#访问格式：localhost:8001【该服务端口】/config/dev.
+spring:
+  application:
+    #服务名称
+    name: config-server
+  cloud:
+    config:
+      server:
+        git:
+          #远程仓库的地址
+          uri: https://github.com/End-Point/Practice
+          #配置文件在远程仓库的哪个文件夹
+          search-paths: config-repo
+          #仓库的用户名和密码，公开仓库可以不写
+          username:
+          password:
+      # 仓库的分支，默认是master
+      label: master

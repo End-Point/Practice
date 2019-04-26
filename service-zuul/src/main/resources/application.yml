@@ -1,0 +1,37 @@
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/
+server:
+  port: 8769
+spring:
+  application:
+    name: service-zuul
+
+#配置路由网关
+zuul:
+  routes:
+    api-a:  #以/api-a/开头的转发到service-ribbon服务 这里可以修改
+      path: /api-a/**
+      serviceId: service-ribbon
+    api-b:  #以/api-b/开头的转发到service-feign服务 这里可以修改
+      path: /api-b/**
+      serviceId: service-feign
+  host:
+    connect-timeout-millis: 10000
+    socket-timeout-millis: 60000
+
+##设置zuul的超时设置，如果不设置会报错 如果使用默认配置，请求很容易超时com.netflix.zuul.exception.ZuulException：Hystrix Readed time out
+hystrix:
+  command:
+    default:
+      execution:
+        timeout:
+          enabled: true
+        isolation:
+          thread:
+            timeoutInMilliseconds: 60000
+ribbon:
+  ReadTimeout: 40000
+  SocketTimeout: 40000
+
