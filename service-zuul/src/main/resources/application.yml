@@ -9,12 +9,16 @@ spring:
     name: service-zuul
 
 #配置路由网关
+#但是如果后端服务多达十几个的时候，每一个都这样配置也挺麻烦的，spring cloud zuul已经帮我们做了默认配置。默认情况下，
+#Zuul会代理所有注册到Eureka Server的微服务，
+#并且Zuul的路由规则如下：http://ZUUL_HOST:ZUUL_PORT/微服务在Eureka上的serviceId/**会被转发到serviceId对应的微服务。
+#所以，zuul的配置可以注释掉
 zuul:
   routes:
-    api-a:  #以/api-a/开头的转发到service-ribbon服务 这里可以修改
+    api-a:  #以/api-a/开头的请求转发到service-ribbon服务 这里可以修改
       path: /api-a/**
       serviceId: service-ribbon
-    api-b:  #以/api-b/开头的转发到service-feign服务 这里可以修改
+    api-b:  #以/api-b/开头的请求转发到service-feign服务 这里可以修改
       path: /api-b/**
       serviceId: service-feign
   host:

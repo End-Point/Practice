@@ -5,6 +5,8 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.cloud.client.discovery.EnableDiscoveryClient;
 
 /**
+ * 第六章-2：springcloud config 配置中心-client端
+ *
  * springcloud config 统一配置的流程：
  * springcloud config的客户端通过配置文件的uri找到config服务端，然后服务端会去远程仓库获取配置文件，最后以接口的形式返回到config的客户端。
  * Spring Cloud Config分服务端和客户端，服务端负责将git（svn）中存储的配置文件发布成REST接口，客户端可以从服务端REST接口获取配置。
