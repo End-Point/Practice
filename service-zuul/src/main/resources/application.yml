@@ -14,6 +14,7 @@ spring:
 #并且Zuul的路由规则如下：http://ZUUL_HOST:ZUUL_PORT/微服务在Eureka上的serviceId/**会被转发到serviceId对应的微服务。
 #所以，zuul的配置可以注释掉
 zuul:
+  #请求转发
   routes:
     api-a:  #以/api-a/开头的请求转发到service-ribbon服务 这里可以修改
       path: /api-a/**
@@ -34,7 +35,7 @@ hystrix:
           enabled: true
         isolation:
           thread:
-            timeoutInMilliseconds: 60000
+            timeoutInMilliseconds: 90000
 ribbon:
   ReadTimeout: 40000
   SocketTimeout: 40000
